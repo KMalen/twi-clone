@@ -3,27 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		01183CB9260DD0260004259A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CB8260DD0260004259A /* AppDelegate.swift */; };
 		01183CBB260DD0260004259A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CBA260DD0260004259A /* SceneDelegate.swift */; };
-		01183CBD260DD0260004259A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CBC260DD0260004259A /* ViewController.swift */; };
+		01183CBD260DD0260004259A /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CBC260DD0260004259A /* StartViewController.swift */; };
 		01183CC0260DD0260004259A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01183CBE260DD0260004259A /* Main.storyboard */; };
 		01183CC2260DD02C0004259A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01183CC1260DD02C0004259A /* Assets.xcassets */; };
 		01183CC5260DD02C0004259A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01183CC3260DD02C0004259A /* LaunchScreen.storyboard */; };
+		01183CCE260DD1C10004259A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01183CCD260DD1C10004259A /* GoogleService-Info.plist */; };
+		01183CFE260E19FD0004259A /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CFD260E19FD0004259A /* LoginScreenViewController.swift */; };
+		A594143B49664D429BA5AD97 /* Pods_twi_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BE9F1F89B5C44CFBFA88D8 /* Pods_twi_clone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01183CB5260DD0260004259A /* twi-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "twi-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01183CB8260DD0260004259A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01183CBA260DD0260004259A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01183CBC260DD0260004259A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01183CBC260DD0260004259A /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		01183CBF260DD0260004259A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01183CC1260DD02C0004259A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01183CC4260DD02C0004259A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01183CC6260DD02C0004259A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01183CCD260DD1C10004259A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01183CED260DF7250004259A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		01183CFD260E19FD0004259A /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		AD882AC763646EB375FC65C9 /* Pods-twi-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twi-clone.release.xcconfig"; path = "Target Support Files/Pods-twi-clone/Pods-twi-clone.release.xcconfig"; sourceTree = "<group>"; };
+		E3CE7EB9A0776B17484FE519 /* Pods-twi-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twi-clone.debug.xcconfig"; path = "Target Support Files/Pods-twi-clone/Pods-twi-clone.debug.xcconfig"; sourceTree = "<group>"; };
+		E7BE9F1F89B5C44CFBFA88D8 /* Pods_twi_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twi_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A594143B49664D429BA5AD97 /* Pods_twi_clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +52,8 @@
 			children = (
 				01183CB7260DD0260004259A /* twi-clone */,
 				01183CB6260DD0260004259A /* Products */,
+				1279C84D843FAE7ADE32F08B /* Pods */,
+				0BEC821AB8A74613193B7621 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +68,67 @@
 		01183CB7260DD0260004259A /* twi-clone */ = {
 			isa = PBXGroup;
 			children = (
-				01183CB8260DD0260004259A /* AppDelegate.swift */,
-				01183CBA260DD0260004259A /* SceneDelegate.swift */,
-				01183CBC260DD0260004259A /* ViewController.swift */,
-				01183CBE260DD0260004259A /* Main.storyboard */,
-				01183CC1260DD02C0004259A /* Assets.xcassets */,
-				01183CC3260DD02C0004259A /* LaunchScreen.storyboard */,
+				01183CEB260DF70F0004259A /* Sources */,
+				01183CEA260DF6F60004259A /* App */,
+				01183CE9260DF6EF0004259A /* Model */,
+				01183CE8260DF6E70004259A /* Controller */,
+				01183CCD260DD1C10004259A /* GoogleService-Info.plist */,
 				01183CC6260DD02C0004259A /* Info.plist */,
 			);
 			path = "twi-clone";
+			sourceTree = "<group>";
+		};
+		01183CE8260DF6E70004259A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01183CBC260DD0260004259A /* StartViewController.swift */,
+				01183CFD260E19FD0004259A /* LoginScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01183CE9260DF6EF0004259A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01183CEA260DF6F60004259A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				01183CB8260DD0260004259A /* AppDelegate.swift */,
+				01183CBA260DD0260004259A /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		01183CEB260DF70F0004259A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				01183CBE260DD0260004259A /* Main.storyboard */,
+				01183CC1260DD02C0004259A /* Assets.xcassets */,
+				01183CC3260DD02C0004259A /* LaunchScreen.storyboard */,
+				01183CED260DF7250004259A /* GoogleService-Info.plist */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0BEC821AB8A74613193B7621 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE9F1F89B5C44CFBFA88D8 /* Pods_twi_clone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1279C84D843FAE7ADE32F08B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE7EB9A0776B17484FE519 /* Pods-twi-clone.debug.xcconfig */,
+				AD882AC763646EB375FC65C9 /* Pods-twi-clone.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01183CC9260DD02C0004259A /* Build configuration list for PBXNativeTarget "twi-clone" */;
 			buildPhases = (
+				D2B7FFD42EB9CBA07E15B13A /* [CP] Check Pods Manifest.lock */,
 				01183CB1260DD0260004259A /* Sources */,
 				01183CB2260DD0260004259A /* Frameworks */,
 				01183CB3260DD0260004259A /* Resources */,
+				A787BFF9E7433A11F8BB17B3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01183CC5260DD02C0004259A /* LaunchScreen.storyboard in Resources */,
+				01183CCE260DD1C10004259A /* GoogleService-Info.plist in Resources */,
 				01183CC2260DD02C0004259A /* Assets.xcassets in Resources */,
 				01183CC0260DD0260004259A /* Main.storyboard in Resources */,
 			);
@@ -132,13 +199,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A787BFF9E7433A11F8BB17B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twi-clone/Pods-twi-clone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-twi-clone/Pods-twi-clone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-twi-clone/Pods-twi-clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2B7FFD42EB9CBA07E15B13A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-twi-clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01183CB1260DD0260004259A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01183CBD260DD0260004259A /* ViewController.swift in Sources */,
+				01183CBD260DD0260004259A /* StartViewController.swift in Sources */,
 				01183CB9260DD0260004259A /* AppDelegate.swift in Sources */,
+				01183CFE260E19FD0004259A /* LoginScreenViewController.swift in Sources */,
 				01183CBB260DD0260004259A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +393,7 @@
 		};
 		01183CCA260DD02C0004259A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3CE7EB9A0776B17484FE519 /* Pods-twi-clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +412,7 @@
 		};
 		01183CCB260DD02C0004259A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD882AC763646EB375FC65C9 /* Pods-twi-clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
