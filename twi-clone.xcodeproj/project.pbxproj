@@ -15,6 +15,8 @@
 		01183CC5260DD02C0004259A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01183CC3260DD02C0004259A /* LaunchScreen.storyboard */; };
 		01183CCE260DD1C10004259A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01183CCD260DD1C10004259A /* GoogleService-Info.plist */; };
 		01183CFE260E19FD0004259A /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01183CFD260E19FD0004259A /* LoginScreenViewController.swift */; };
+		01BA28ED26135831000AE795 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA28EC26135831000AE795 /* SignUpViewController.swift */; };
+		01BA28F126139A8A000AE795 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BA28F026139A8A000AE795 /* Utilities.swift */; };
 		A594143B49664D429BA5AD97 /* Pods_twi_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BE9F1F89B5C44CFBFA88D8 /* Pods_twi_clone.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		01183CCD260DD1C10004259A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01183CED260DF7250004259A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		01183CFD260E19FD0004259A /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		01BA28EC26135831000AE795 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		01BA28F026139A8A000AE795 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		AD882AC763646EB375FC65C9 /* Pods-twi-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twi-clone.release.xcconfig"; path = "Target Support Files/Pods-twi-clone/Pods-twi-clone.release.xcconfig"; sourceTree = "<group>"; };
 		E3CE7EB9A0776B17484FE519 /* Pods-twi-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twi-clone.debug.xcconfig"; path = "Target Support Files/Pods-twi-clone/Pods-twi-clone.debug.xcconfig"; sourceTree = "<group>"; };
 		E7BE9F1F89B5C44CFBFA88D8 /* Pods_twi_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_twi_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,7 @@
 		01183CB7260DD0260004259A /* twi-clone */ = {
 			isa = PBXGroup;
 			children = (
+				01BA28EF26139A70000AE795 /* Helpers */,
 				01183CEB260DF70F0004259A /* Sources */,
 				01183CEA260DF6F60004259A /* App */,
 				01183CE9260DF6EF0004259A /* Model */,
@@ -83,6 +88,7 @@
 			children = (
 				01183CBC260DD0260004259A /* StartViewController.swift */,
 				01183CFD260E19FD0004259A /* LoginScreenViewController.swift */,
+				01BA28EC26135831000AE795 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +118,14 @@
 				01183CED260DF7250004259A /* GoogleService-Info.plist */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		01BA28EF26139A70000AE795 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				01BA28F026139A8A000AE795 /* Utilities.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		0BEC821AB8A74613193B7621 /* Frameworks */ = {
@@ -246,10 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BA28F126139A8A000AE795 /* Utilities.swift in Sources */,
 				01183CBD260DD0260004259A /* StartViewController.swift in Sources */,
 				01183CB9260DD0260004259A /* AppDelegate.swift in Sources */,
 				01183CFE260E19FD0004259A /* LoginScreenViewController.swift in Sources */,
 				01183CBB260DD0260004259A /* SceneDelegate.swift in Sources */,
+				01BA28ED26135831000AE795 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

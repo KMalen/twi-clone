@@ -9,14 +9,18 @@ import UIKit
 import FirebaseAuth
 
 class StartViewController: UIViewController {
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setUpStyleElements()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        
+    func setUpStyleElements(){
+        Utilities.styleHollowButton(loginButton)
+        Utilities.styleFilledButton(signUpButton)
     }
     
     @IBAction func unwindToStartView(_ unwindSegue: UIStoryboardSegue) {
