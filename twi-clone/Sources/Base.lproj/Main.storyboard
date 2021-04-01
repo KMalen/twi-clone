@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +37,14 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="E7m-V2-hKt" kind="presentation" modalPresentationStyle="fullScreen" id="dlr-yH-6V9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-uj-Hg6">
+                                <rect key="frame" x="184" y="740" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OYM-i5-RCU" kind="presentation" modalPresentationStyle="fullScreen" id="ego-mR-Ow0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,14 +265,41 @@
                             <constraint firstAttribute="trailing" secondItem="ORv-eH-J8t" secondAttribute="trailing" constant="20" id="oll-cf-uTZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="f7k-uF-emR"/>
+                    <navigationItem key="navigationItem" id="f7k-uF-emR">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="EmL-7b-P6n">
+                            <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
+                            <connections>
+                                <action selector="menuButtonTapped" destination="ekG-lf-tE2" id="N2S-bO-6JM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcT-FN-EVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989.8550724637682" y="-168.08035714285714"/>
+            <point key="canvasLocation" x="2833" y="-97"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xz3-eO-fZF">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavVC" automaticallyAdjustsScrollViewInsets="NO" id="OYM-i5-RCU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Glc-RT-iys"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="153-Xl-qps">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ekG-lf-tE2" kind="relationship" relationship="rootViewController" id="OLu-pb-xqB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZB-da-KgU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861" y="-97"/>
         </scene>
     </scenes>
     <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
