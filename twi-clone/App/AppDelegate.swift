@@ -11,11 +11,14 @@ import Firebase
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+//        if let currentUser = Auth.auth().currentUser {
+//            print("User: \(currentUser.uid)")
+//        }
+        
         return true
     }
 

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +11,7 @@
         <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="twi_clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startVC" id="BYZ-38-t0r" customClass="StartViewController" customModule="twi_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +56,7 @@
                             <constraint firstItem="JSw-Ws-Ehd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lgm-lu-AsX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KLF-vw-Jgh"/>
                     <connections>
                         <outlet property="loginButton" destination="JSw-Ws-Ehd" id="1zg-YK-62a"/>
                         <outlet property="signUpButton" destination="4t9-HE-7BA" id="OSW-7a-xrg"/>
@@ -203,7 +203,7 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFp-ad-nlJ">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="Login" id="kzZ-vb-Kla">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="2cm-Ri-6JF">
@@ -235,6 +235,7 @@
                         <outlet property="loginButton" destination="Hcq-1J-dbM" id="y4P-hm-E66"/>
                         <outlet property="loginField" destination="jcR-Qe-JYV" id="EAJ-B3-GO3"/>
                         <outlet property="passwordField" destination="Ydl-OI-LYV" id="OCP-Et-0Le"/>
+                        <segue destination="OYM-i5-RCU" kind="presentation" modalPresentationStyle="fullScreen" id="flh-sG-WBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2O-mn-uAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -256,6 +257,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14c-Ng-8ph">
+                                <rect key="frame" x="184" y="282" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="ButtonTap:" destination="ekG-lf-tE2" eventType="touchUpInside" id="ahs-Of-Gip"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ugZ-UZ-OAi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -267,14 +276,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="f7k-uF-emR">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="EmL-7b-P6n">
-                            <imageReference key="image" image="line.horizontal.3" catalog="system" symbolScale="large"/>
                             <connections>
                                 <action selector="menuButtonTapped" destination="ekG-lf-tE2" id="N2S-bO-6JM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="VMK-oP-dkn" kind="unwind" identifier="unwindToStartView" unwindAction="unwindToStartView:" id="teY-cV-ssW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcT-FN-EVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VMK-oP-dkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2833" y="-97"/>
         </scene>
@@ -298,8 +310,10 @@
             <point key="canvasLocation" x="1861" y="-97"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="flh-sG-WBB"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

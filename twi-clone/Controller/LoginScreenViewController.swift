@@ -19,13 +19,13 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         
         setUpStyleElements()
-        // Do any additional setup after loading the view.
     }
     
     func setUpStyleElements(){
         Utilities.styleFilledButton(loginButton)
         Utilities.styleTextField(loginField)
         Utilities.styleTextField(passwordField)
+        
         //Hide the error label
         errorLoginLabel.alpha = 0
     }
@@ -46,10 +46,11 @@ class LoginScreenViewController: UIViewController {
     }
     
     func transitionToHomeScreen(){
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? UINavigationController
-
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        let homeNavigationController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? UINavigationController
+//        let homeViewController = storyboard?.instantiateViewController(identifier: "HomeVC") as? HomeViewController
+        
+        homeNavigationController?.modalPresentationStyle = .fullScreen
+        self.present(homeNavigationController!, animated: true, completion: nil)
     }
 
 

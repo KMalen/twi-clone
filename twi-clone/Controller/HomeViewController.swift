@@ -7,68 +7,84 @@
 
 import UIKit
 import SideMenu
+import FirebaseAuth
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, MenuControllerDelegate {
     
-    var menu = SideMenuNavigationController(rootViewController: MenuListController())
+    var menu: SideMenuNavigationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let sideMenu = MenuListController()
+        sideMenu.delegate = self
+        
+        menu = SideMenuNavigationController(rootViewController: sideMenu)
         
         setUpStyleElements()
         
     }
     
+    //just debug for unwind to main screen
+    @IBAction func ButtonTap(_ sender: Any) {
+        
+        performSegue(withIdentifier: "unwindToStartView", sender: self)
+        
+    }
+    
+    // Setup navigation bar style and menu side style
     func setUpStyleElements(){
         
-        menu.leftSide = true
-        menu.menuWidth = view.frame.width / 3
-        menu.setNavigationBarHidden(true, animated: false)
+        menu?.leftSide = true
+        menu?.menuWidth = view.frame.width / 3
+        menu?.setNavigationBarHidden(true, animated: false)
         
         SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
         
         title = "Home"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 25)!]
+    }
+    
+    // action on menu button
+    @IBAction func menuButtonTapped(){
+        
+        // Just for debug sign in user
+        let user = Auth.auth().currentUser
+        if let user = user {
+            print("User UID: \(user.uid)")
+        }
+        
+        present(menu!, animated: true, completion: nil)
+    }
+    
+    func didSelectMenuItem(named: String) {
+        
+        menu?.dismiss(animated: true, completion: { [weak self] in
+            
+            switch named {
+            case "Log Out":
+                
+                let firebaseAuth = Auth.auth()
+                
+                do {
+                    try firebaseAuth.signOut()
+                } catch let signOutError as NSError {
+                    print ("Error sign out: %@", signOutError)
+                }
+                
+                self?.performSegue(withIdentifier: "unwindToStartView", sender: self)
+                
+            default:
+                break
+            }
+            
+        })
         
     }
     
-    @IBAction func menuButtonTapped(){
-        present(menu, animated: true, completion: nil)
-    }
-
 }
 
-// TODO: Change color in a selected row
-class MenuListController: UITableViewController {
-    
-    var menuItems = ["Profile", "Friends", "News", "Messages", "Settings", "Log Out"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItems.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = menuItems[indexPath.row]
-        
-        // Set up font style and background style
-        cell.textLabel?.font = UIFont(name: "Futura", size: 20)
-        cell.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-        cell.textLabel?.textColor = UIColor.white
-        
-        return cell
-    }
-    
+protocol MenuControllerDelegate {
+    func didSelectMenuItem(named: String)
 }
