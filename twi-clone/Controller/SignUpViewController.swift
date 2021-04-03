@@ -23,7 +23,6 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         setUpStyleElements()
-        // Do any additional setup after loading the view.
     }
     
     func setUpStyleElements(){
@@ -32,6 +31,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
+        
         // Hide the error label
         errorLabel.alpha = 0
     }
@@ -61,10 +61,11 @@ class SignUpViewController: UIViewController {
     }
     
     func transitionToHomeScreen(){
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        let homeNavigationController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? UINavigationController
+//        let homeViewController = storyboard?.instantiateViewController(identifier: "HomeVC") as? HomeViewController
         
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+        homeNavigationController?.modalPresentationStyle = .fullScreen
+        self.present(homeNavigationController!, animated: true, completion: nil)
     }
     
     

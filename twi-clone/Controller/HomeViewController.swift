@@ -25,13 +25,6 @@ class HomeViewController: UIViewController, MenuControllerDelegate {
         
     }
     
-    //just debug for unwind to main screen
-    @IBAction func ButtonTap(_ sender: Any) {
-        
-        performSegue(withIdentifier: "unwindToStartView", sender: self)
-        
-    }
-    
     // Setup navigation bar style and menu side style
     func setUpStyleElements(){
         
@@ -74,7 +67,7 @@ class HomeViewController: UIViewController, MenuControllerDelegate {
                 }
                 
                 self?.performSegue(withIdentifier: "unwindToStartView", sender: self)
-                
+                 
             default:
                 break
             }
