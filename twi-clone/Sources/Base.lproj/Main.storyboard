@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="908.69565217391312" y="-557.14285714285711"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="XwB-Ql-AHK">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="ekG-lf-tE2" customClass="HomeViewController" customModule="twi_clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="ekG-lf-tE2" customClass="ProfileViewController" customModule="twi_clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h9g-Hr-KQQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -275,7 +275,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f7k-uF-emR">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="EmL-7b-P6n">
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" landscapeImage="line.horizontal.3" id="EmL-7b-P6n">
                             <connections>
                                 <action selector="menuButtonTapped" destination="ekG-lf-tE2" id="N2S-bO-6JM"/>
                             </connections>
@@ -314,6 +314,7 @@
         <segue reference="flh-sG-WBB"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

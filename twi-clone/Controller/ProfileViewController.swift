@@ -9,7 +9,7 @@ import UIKit
 import SideMenu
 import FirebaseAuth
 
-class HomeViewController: UIViewController, MenuControllerDelegate {
+class ProfileViewController: UIViewController, MenuControllerDelegate {
     
     var menu: SideMenuNavigationController?
     
@@ -35,8 +35,8 @@ class HomeViewController: UIViewController, MenuControllerDelegate {
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         
-        title = "Home"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 25)!]
+        title = "Profile"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Futura", size: 25)!, NSAttributedString.Key.foregroundColor: UIColor.systemBlue]
     }
     
     // action on menu button
