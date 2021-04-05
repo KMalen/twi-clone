@@ -19,6 +19,13 @@ class LoginScreenViewController: UIViewController {
         super.viewDidLoad()
         
         setUpStyleElements()
+        setUpTextFieldsTagAndDelegates()
+        
+        initializeHideKeyboard()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     func setUpStyleElements(){
@@ -30,11 +37,19 @@ class LoginScreenViewController: UIViewController {
         errorLoginLabel.alpha = 0
     }
     
+    func setUpTextFieldsTagAndDelegates(){
+        loginField.delegate = self
+        passwordField.delegate = self
+        
+        loginField.tag = 1
+        passwordField.tag = 2
+    }
+    
     func validateFields() -> String? {
         
         if  loginField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
-            {
+                passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+        {
             return "Please fill in all fields"
         }
         return nil
@@ -47,13 +62,13 @@ class LoginScreenViewController: UIViewController {
     
     func transitionToHomeScreen(){
         let homeNavigationController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? UINavigationController
-//        let homeViewController = storyboard?.instantiateViewController(identifier: "HomeVC") as? HomeViewController
+        //        let homeViewController = storyboard?.instantiateViewController(identifier: "HomeVC") as? HomeViewController
         
         homeNavigationController?.modalPresentationStyle = .fullScreen
         self.present(homeNavigationController!, animated: true, completion: nil)
     }
-
-
+    
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         
         // Check fields validate
@@ -85,7 +100,36 @@ class LoginScreenViewController: UIViewController {
             
         }
         
-        
     }
+    
+}
 
+extension LoginScreenViewController: UITextFieldDelegate {
+    
+    func initializeHideKeyboard(){
+        //Declare a Tap Gesture Recognizer which will trigger our dismissMyKeyboard() function
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissMyKeyboard))
+        
+        //Add this tap gesture recognizer to the parent view
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissMyKeyboard(){
+        //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
+        //In short- Dismiss the active keyboard.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
+        if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+    
 }
